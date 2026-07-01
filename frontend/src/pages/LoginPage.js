@@ -26,6 +26,8 @@ export default function LoginPage() {
     if (role === 'teacher') { setEmail('faculty@college.edu'); setPassword('teacher000'); }
     else { setEmail('student@student.edu'); setPassword('student000'); }
   };
+  //teacher@college.edu teacher123
+  //priya@student.edu student123
 
   return (
     <div className="login-page">
