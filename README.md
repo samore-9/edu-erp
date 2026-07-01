@@ -95,7 +95,7 @@ college-erp/
 ### 1. Clone & Setup
 
 ```bash
-git clone <repo-url>
+git clone github.com/samore-9/edu-erp
 cd college-erp
 ```
 
@@ -284,9 +284,9 @@ The UI uses a custom design system defined in `App.css`:
 
 | Role | Email | Password |
 |------|-------|----------|
-| Teacher | teacher@college.edu | teacher123 |
-| Student | priya@student.edu | student123 |
-| Student | rahul@student.edu | student123 |
-| Student | anjali@student.edu | student123 |
+| Teacher | teacher@college.edu | college753 |
+| Student | priya@student.edu | priya652 |
+| Student | rahul@student.edu | rahul324 |
+| Student | anjali@student.edu | anjali364 |
 
 > ⚠️ Change all passwords before deploying to production.
