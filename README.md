@@ -1,6 +1,8 @@
 # 🎓 College ERP System
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Open-success?style=for-the-badge)](https://edu-erp-sigma.vercel.app)
 
 A production-ready, full-stack College ERP System built with Node.js + Express + MongoDB + React.
+
 
 ---
 
