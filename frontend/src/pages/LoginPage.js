@@ -23,8 +23,8 @@ export default function LoginPage() {
   };
 
   const fillDemo = (role) => {
-    if (role === 'teacher') { setEmail('teacher@college.edu'); setPassword('teacher123'); }
-    else { setEmail('priya@student.edu'); setPassword('student123'); }
+    if (role === 'teacher') { setEmail('faculty@college.edu'); setPassword('teacher000'); }
+    else { setEmail('student@student.edu'); setPassword('student000'); }
   };
 
   return (
