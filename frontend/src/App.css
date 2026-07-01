@@ -1,0 +1,292 @@
+/* src/App.css — College ERP Design System */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --primary: #1a3a5c;
+  --primary-light: #2456a4;
+  --accent: #e8a020;
+  --accent-light: #f5c842;
+  --success: #1a9e6a;
+  --danger: #c0392b;
+  --warning: #e67e22;
+  --info: #2980b9;
+  --bg: #f0f4f8;
+  --surface: #ffffff;
+  --surface2: #f8fafc;
+  --border: #d1dce8;
+  --text: #1a2640;
+  --text-muted: #6b7e96;
+  --sidebar-w: 250px;
+  --navbar-h: 64px;
+  --radius: 12px;
+  --shadow: 0 2px 16px rgba(26,58,92,0.08);
+  --shadow-md: 0 4px 24px rgba(26,58,92,0.13);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Sora', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+}
+
+/* ─── Layout ─────────────────────────────────────────── */
+.erp-layout { display: flex; min-height: 100vh; }
+
+.erp-main {
+  margin-left: var(--sidebar-w);
+  margin-top: var(--navbar-h);
+  padding: 28px;
+  flex: 1;
+  min-height: calc(100vh - var(--navbar-h));
+  background: var(--bg);
+}
+
+/* ─── Navbar ──────────────────────────────────────────── */
+.erp-navbar {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--navbar-h);
+  background: var(--primary);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 28px 0 calc(var(--sidebar-w) + 28px);
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.erp-navbar .page-title {
+  font-size: 1.15rem; font-weight: 600;
+  color: rgba(255,255,255,0.9);
+}
+
+.erp-navbar .user-info {
+  display: flex; align-items: center; gap: 12px; color: white;
+}
+
+.erp-navbar .user-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--accent); display: flex; align-items: center;
+  justify-content: center; font-weight: 700; font-size: 0.9rem; color: white;
+}
+
+/* ─── Sidebar ─────────────────────────────────────────── */
+.erp-sidebar {
+  position: fixed; left: 0; top: 0; bottom: 0;
+  width: var(--sidebar-w);
+  background: linear-gradient(180deg, #0f2340 0%, #1a3a5c 100%);
+  z-index: 1001;
+  display: flex; flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidebar-brand {
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar-brand .brand-logo {
+  font-size: 1.3rem; font-weight: 700; color: white;
+  display: flex; align-items: center; gap: 10px;
+}
+
+.sidebar-brand .brand-sub {
+  font-size: 0.7rem; color: rgba(255,255,255,0.45);
+  margin-top: 2px; letter-spacing: 1px; text-transform: uppercase;
+}
+
+.sidebar-nav { padding: 12px 0; flex: 1; }
+
+.sidebar-section-label {
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.3); text-transform: uppercase;
+  padding: 12px 20px 4px;
+}
+
+.sidebar-nav a {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 20px; color: rgba(255,255,255,0.65);
+  text-decoration: none; font-size: 0.88rem; font-weight: 500;
+  transition: all 0.2s; border-left: 3px solid transparent;
+}
+
+.sidebar-nav a:hover {
+  background: rgba(255,255,255,0.07);
+  color: white; border-left-color: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav a.active {
+  background: rgba(232,160,32,0.15);
+  color: var(--accent-light);
+  border-left-color: var(--accent);
+}
+
+.sidebar-nav a i { font-size: 1.1rem; width: 20px; text-align: center; }
+
+.sidebar-footer {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar-footer .role-badge {
+  display: inline-block; padding: 3px 10px; border-radius: 20px;
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.5px;
+  text-transform: uppercase; margin-bottom: 10px;
+}
+
+.role-badge.teacher { background: rgba(232,160,32,0.2); color: var(--accent-light); }
+.role-badge.student { background: rgba(26,158,106,0.2); color: #4ecf9f; }
+
+/* ─── Cards ───────────────────────────────────────────── */
+.stat-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.stat-card .stat-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; margin-bottom: 12px;
+}
+
+.stat-card .stat-value {
+  font-size: 2rem; font-weight: 700; line-height: 1; margin-bottom: 4px;
+}
+
+.stat-card .stat-label {
+  font-size: 0.82rem; color: var(--text-muted); font-weight: 500;
+}
+
+.stat-card .stat-change {
+  font-size: 0.78rem; margin-top: 8px;
+}
+
+/* Card color variants */
+.stat-blue .stat-icon { background: #e8f0fe; color: var(--primary-light); }
+.stat-green .stat-icon { background: #e6f7f0; color: var(--success); }
+.stat-orange .stat-icon { background: #fef3e2; color: var(--warning); }
+.stat-red .stat-icon { background: #fdecea; color: var(--danger); }
+.stat-purple .stat-icon { background: #f0ebff; color: #7c3aed; }
+
+/* ─── ERP Card (Content areas) ────────────────────────── */
+.erp-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.erp-card-header {
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--surface2);
+}
+
+.erp-card-header h5 {
+  margin: 0; font-size: 1rem; font-weight: 600; color: var(--primary);
+}
+
+.erp-card-body { padding: 20px 24px; }
+
+/* ─── Tables ──────────────────────────────────────────── */
+.erp-table { width: 100%; font-size: 0.875rem; }
+
+.erp-table th {
+  background: var(--surface2); color: var(--text-muted);
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.5px;
+  text-transform: uppercase; padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.erp-table td {
+  padding: 13px 16px; border-bottom: 1px solid #eef2f7;
+  vertical-align: middle;
+}
+
+.erp-table tr:last-child td { border-bottom: none; }
+.erp-table tr:hover td { background: #f8fafc; }
+
+/* ─── Badges ──────────────────────────────────────────── */
+.badge-present { background: #e6f7f0; color: var(--success); }
+.badge-absent  { background: #fdecea; color: var(--danger); }
+.badge-late    { background: #fef3e2; color: var(--warning); }
+.badge-paid    { background: #e6f7f0; color: var(--success); }
+.badge-pending { background: #fef3e2; color: var(--warning); }
+.badge-overdue { background: #fdecea; color: var(--danger); }
+
+.status-badge {
+  padding: 4px 10px; border-radius: 20px;
+  font-size: 0.75rem; font-weight: 600;
+}
+
+/* ─── Buttons ─────────────────────────────────────────── */
+.btn-primary-erp {
+  background: var(--primary-light); border: none; color: white;
+  padding: 9px 20px; border-radius: 8px; font-size: 0.875rem;
+  font-weight: 600; cursor: pointer; transition: all 0.2s;
+  font-family: 'Sora', sans-serif;
+}
+.btn-primary-erp:hover { background: var(--primary); transform: translateY(-1px); }
+
+.btn-accent-erp {
+  background: var(--accent); border: none; color: white;
+  padding: 9px 20px; border-radius: 8px; font-size: 0.875rem;
+  font-weight: 600; cursor: pointer; transition: all 0.2s;
+  font-family: 'Sora', sans-serif;
+}
+.btn-accent-erp:hover { background: #d4910e; }
+
+/* ─── Forms ───────────────────────────────────────────── */
+.erp-input {
+  width: 100%; padding: 10px 14px; border: 1.5px solid var(--border);
+  border-radius: 8px; font-size: 0.875rem; font-family: 'Sora', sans-serif;
+  transition: border-color 0.2s; outline: none; background: white;
+}
+.erp-input:focus { border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(36,86,164,0.1); }
+
+/* ─── Attendance Progress ─────────────────────────────── */
+.attendance-ring {
+  position: relative; width: 100px; height: 100px;
+}
+
+.attendance-ring svg { transform: rotate(-90deg); }
+.attendance-ring .ring-text {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+
+/* ─── Alert bar ───────────────────────────────────────── */
+.alert-low-attendance {
+  background: #fdecea; border: 1px solid #f5c6c6;
+  border-radius: 8px; padding: 12px 16px;
+  color: var(--danger); font-size: 0.85rem;
+  display: flex; align-items: center; gap: 8px;
+}
+
+/* ─── Login Page ──────────────────────────────────────── */
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2340 0%, #1a3a5c 50%, #2456a4 100%);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.login-card {
+  background: white; border-radius: 20px; padding: 48px 40px;
+  width: 100%; max-width: 420px; box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+/* ─── Responsive ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .erp-sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+  .erp-sidebar.open { transform: translateX(0); }
+  .erp-main { margin-left: 0; }
+  .erp-navbar { padding-left: 28px; }
+}
