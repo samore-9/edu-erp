@@ -33,6 +33,8 @@ app.use(cors({
   credentials: true,
 }));
 
+app.set('trust proxy', 1);
+
 // Rate limiting — 100 requests per 15 minutes per IP
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
