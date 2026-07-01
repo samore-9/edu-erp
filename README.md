@@ -137,8 +137,8 @@ npm run seed
 ```
 
 This creates:
-- **Teacher:** `teacher@college.edu` / `teacher123`
-- **Student:** `priya@student.edu` / `student123`
+- **Teacher:** `faculty@college.edu` / `teacher@324`
+- **Student:** `student@student.edu` / `student@234`
 - Sample attendance, fees, tasks, and timetable
 
 ---
