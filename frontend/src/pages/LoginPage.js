@@ -87,10 +87,34 @@ export default function LoginPage() {
 
         {/* Demo credentials */}
         <div style={{ marginTop: 24, padding: '16px', background: '#f0f4f8', borderRadius: 10 }}>
-          <p style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-            Quick Demo Access
-          </p>
-          <div className="d-flex gap-2">
+          <div
+            style={{
+              background: "#fff8e6",
+              border: "1px solid #f5c96b",
+              borderRadius: "9px",
+              padding: "10px 12px",
+              marginBottom: "12px",
+              color: "#765500",
+              fontSize: "12px",
+              lineHeight: "1.45",
+            }}
+          >
+            <div
+              style={{
+                fontWeight: "700",
+                color: "#8a6200",
+                marginBottom: "3px",
+              }}
+            >
+              🔒 Demo credentials
+            </div>
+
+            <div>
+              Dummy credentials for demonstration only.
+              They do not provide access to the live application or real data.
+            </div>
+          </div>
+            <div className="d-flex gap-2">
             <button onClick={() => fillDemo('teacher')} style={{
               flex: 1, padding: '8px', background: 'var(--primary)', color: 'white',
               border: 'none', borderRadius: 8, fontSize: '0.8rem', fontWeight: 600, cursor: 'pointer'
