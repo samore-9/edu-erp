@@ -51,9 +51,9 @@ jobs:
       name: production
       url: ${{ steps.deploy.outputs.url }}
 
-    defaults:
-      run:
-        working-directory: frontend
+    # defaults:
+    #   run:
+    #     working-directory: frontend
 
     steps:
       - name: Checkout repository
@@ -76,6 +76,7 @@ jobs:
         id: deploy
         run: |
           URL=$(vercel deploy --prod \
+            --cwd=frontend \
             --token=${{ secrets.VERCEL_TOKEN }} \
             --yes)
           echo "url=$URL" >> $GITHUB_OUTPUT
