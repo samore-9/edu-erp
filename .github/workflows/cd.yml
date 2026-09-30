@@ -82,7 +82,6 @@ jobs:
         id: deploy
         run: |
           URL=$(vercel deploy --prod \
-            --cwd=frontend \
             --token=${{ secrets.VERCEL_TOKEN }} \
             --yes)
           echo "url=$URL" >> $GITHUB_OUTPUT
