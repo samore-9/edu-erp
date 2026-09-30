@@ -111,7 +111,7 @@ export default function LoginPage() {
 
             <div>
               Dummy credentials for demonstration only.
-              They do not provide access to the live application or real data.
+              They do not provide access to the live application or real data
             </div>
           </div>
             <div className="d-flex gap-2">
